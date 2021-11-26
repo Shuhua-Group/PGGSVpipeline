@@ -67,7 +67,7 @@ The pipeline involves three components:
     --help
         print long help
 ```
-## [Note]
+## Note
 ```
 0.) this pipeline is especially useful to run from BAM files, throughout to get VCF files (in whole genome model). If you have existed pre-metasv results, we strongly suggest you to directly run MetaSV pipeline per se, otherwise we only provide single chromosome model for this situation! Or in a special situation, you may try '--dry' option.
     1.) although we provde 'chr' option, we only support 'whole genome' running for cnvnator, lumpy, and breakseq2.
@@ -76,14 +76,14 @@ The pipeline involves three components:
     4.) there are some auto-check for failture running of some tools and will automatically re-run (till to success or server down) -- which is a double-edged sword
     5.) there is a also a stop marker (reRunStop) for 're-run' process, the default time is 5, which means if it continues fail, after 5 times of 're-run'-try, I will not try more, and you may manually check the error and then re-run the whole pipeline and you may consider using '--dry' option.
 ```
-## [Example]
+## Example
 ```
     PGG.SVpipeline.sh -f indi.realigned.bam 1>indi.SVpipeline.log 2>indi.SVpipeline.err
 ```
-## [Credit]
+## Credit
     First written by Fu Ruiqing, with contributions from Wu Zhendong, Lou Haiyi, and Zhang Xi. By courtesy of Tian Lei.
     Edited and improved by Wang Yimin & Xie bo
-## [Contact]
+## Contact
 ```
     wangyimin@picb.ac.cn
 ```
