@@ -1,12 +1,4 @@
 #!/usr/bin/env perl
-############################################################################################################
-##### This script is used to merge the MetaSV individual-chromosome results into a whole genome VCF. #######
-##### I typically run the MetaSV for each chromosome of each individual, and the results basically locate###
-##### in the directory of structure like "Merge/SampleID/chrN/variants.vcf.gz" #############################
-##### The first argument is the indi_Dir, like 'Merge/SampleID', and the second gives the SampleID. ########
-##### The import thing is to merge annotation lines, details see the scripts. ##############################
-##### The output is a merged VCF file of 'Merge/SampleID/SampleID.MetaSV.vcf'. #############################
-############################################################################################################
 use File::Basename;
 use Env;
 die("Argument: indi_Dir SampleID\n") if (@ARGV !=2);
@@ -79,6 +71,3 @@ open VCF,">$genome" or die("Cannot open $genome!\n");
 print VCF @genome;
 close VCF;
 print "Finish $sample!\n";
-
-
-

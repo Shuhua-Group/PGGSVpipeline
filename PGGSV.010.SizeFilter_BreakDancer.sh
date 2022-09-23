@@ -1,5 +1,4 @@
 #!/bin/bash
-
 if [ $# -ne 2 ] && [ $# -ne 3 ];then
 	echo "Argument: breakdancer.SV.output size_low(bp) [size_up(<=3e9)]" && exit 1
 fi 

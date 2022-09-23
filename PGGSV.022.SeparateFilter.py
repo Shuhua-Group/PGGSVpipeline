@@ -35,7 +35,8 @@ BED_col = (1-1,2-1,3-1)				# the column of bed file, as chr, start, end
 ENDp = re.compile(r'(?<=\bEND=)(?P<end>\d+)(?=;)')
 SVTYPEp = re.compile(r'(?<=\bSVTYPE=)(?P<svtype>[\w:\-_]+)(?=;)')
 SVLENp =re.compile(r'(?<=\bSVLEN=)(?P<svlen>\-?\d+)(?=;|$)')
-CNVnatorp = re.compile(r'\bSOURCES=[\d\-]+\-CNVnator\b')
+#CNVnatorp = re.compile(r'\bSOURCES=[\d\-]+\-CNVnator\b')
+CNVnatorp = re.compile(r'CNVnator') # xiebo edited
 
 bedregion={}
 try:

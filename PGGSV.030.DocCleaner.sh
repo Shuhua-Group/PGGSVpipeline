@@ -41,25 +41,19 @@ then
 		#breakdancer
 		if [ -e breakdancer/${TAG_INFILE} ]
 		then
-			rm -f breakdancer/${TAG_INFILE}/*size* breakdancer/${TAG_INFILE}/*log 2>/dev/null
+			rm -f breakdancer/${TAG_INFILE}/*size* 2>/dev/null
 		fi
 
 		#breakseq2
 		if [ -e breakseq2/${TAG_INFILE} ]
 		then
-			rm -f breakseq2/${TAG_INFILE}/*log breakseq2/${TAG_INFILE}/bplib* breakseq2/${TAG_INFILE}/final.bam breakseq2/${TAG_INFILE}/*.gff breakseq2/${TAG_INFILE}/*.out breakseq2/${TAG_INFILE}/*size* 2>/dev/null
-		fi
-
-		#cnvnator
-		if [ -e cnvnator/${TAG_INFILE} ]
-		then
-			rm -f cnvnator/${TAG_INFILE}/*runlog 2>/dev/null
+			rm -f breakseq2/${TAG_INFILE}/bplib* breakseq2/${TAG_INFILE}/final.bam breakseq2/${TAG_INFILE}/*.gff breakseq2/${TAG_INFILE}/*.out breakseq2/${TAG_INFILE}/*size* 2>/dev/null
 		fi
 
 		#lumpy
 		if [ -e lumpy/${TAG_INFILE} ]
 		then
-			rm -f lumpy/${TAG_INFILE}/*bam lumpy/${TAG_INFILE}/*log lumpy/${TAG_INFILE}/*size* 2>/dev/null
+			rm -f lumpy/${TAG_INFILE}/*bam lumpy/${TAG_INFILE}/*size* 2>/dev/null
 		fi
 
 		#pindel
@@ -73,24 +67,23 @@ then
 			rm -f pindel/${TAG_INFILE}/*_LI 2>/dev/null
 			rm -f pindel/${TAG_INFILE}/*.p2vlog 2>/dev/null
 			rm -f pindel/${TAG_INFILE}/*_RP 2>/dev/null
-			rm -f pindel/${TAG_INFILE}/*.runlog 2>/dev/null
 			rm -f pindel/${TAG_INFILE}/*_SI 2>/dev/null
 			rm -f pindel/${TAG_INFILE}/*_TD 2>/dev/null
-			rm -f pindel/${TAG_INFILE}/*log pindel/${TAG_INFILE}/*size* pindel/${TAG_INFILE}/*cfg 2>/dev/null
+			rm -f pindel/${TAG_INFILE}/*size* 2>/dev/null
+			rm -r pindel/${TAG_INFILE}/*cfg 2>/dev/null
 		fi
 		
 		#manta
 		if [ -e manta/${TAG_INFILE} ]
 		then
-			mv manta/${TAG_INFILE}/results/variants/diploidSV.vcf.gz manta/${TAG_INFILE}/
-			rm -rf manta/${TAG_INFILE}/*.py manta/${TAG_INFILE}/*.txt manta/${TAG_INFILE}/*.pickle manta/${TAG_INFILE}/workspace manta/${TAG_INFILE}/results 2>/dev/null
+			rm -rf manta/${TAG_INFILE}/*.py manta/${TAG_INFILE}/*.txt manta/${TAG_INFILE}/*.pickle manta/${TAG_INFILE}/workspace manta/${TAG_INFILE}/results/evidence manta/${TAG_INFILE}/results/stats manta/${TAG_INFILE}/results/variants/*tbi manta/${TAG_INFILE}/results/variants/candidate* 2>/dev/null
 		fi
 
 		#metasv
 		if [ -e metasv/${TAG_INFILE} ]
 		then
 			rm -rf metasv/${TAG_INFILE}/chr* 2>/dev/null
-			rm -f metasv/${TAG_INFILE}/*log metasv/${TAG_INFILE}/*err metasv/${TAG_INFILE}/*DEL.* metasv/${TAG_INFILE}/*.DUP* 2>/dev/null
+			rm -f metasv/${TAG_INFILE}/*err metasv/${TAG_INFILE}/*DEL.* metasv/${TAG_INFILE}/*.DUP* 2>/dev/null
 		fi
 	else
 		echo "FAIL: no ${TAG_INFILE} output!"
